@@ -1,7 +1,6 @@
-//
-// Created by 颜培深 on 2020-01-05.
-//
-import math
+#
+# Created by 颜培深 on 2020-01-05.
+#
 import numpy as np
 from sympy import *
 from scipy.integrate import quad
