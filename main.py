@@ -1,3 +1,6 @@
+//
+// Created by 颜培深 on 2020-01-05.
+//
 import math
 import numpy as np
 from sympy import *
