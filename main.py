@@ -1,5 +1,5 @@
 #
-# Created by 颜培深 on 2020-01-05.
+# Created by 颜培深 on 2020-01-05
 #
 import numpy as np
 from sympy import *
@@ -116,7 +116,7 @@ for j in range(0, 60):
 
 # here should be range(0,60)
 for i in range(0, 59):
-    for j in range(0, 39):
+    for j in range(0, 38):
         B_r[i][j] = - (y[(i+1) % 60][j] - y[i][j]) / np.pi * 6 / r[0][j]**2 / np.sin(theta)[i+1][0]
         B_theta[i][j] = - (y[i][(j+1) % 39] - y[i][j]) / 100 / r[0][j] / np.sin(theta)[i+1][0]
 
