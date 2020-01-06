@@ -85,14 +85,12 @@ def y_n(x, r, n, y, i):
     # print("y_n pass\n")
     return res
 
-def writeFile(y):
-    return
 
 
 print("start")
-y = np.random.random((60, 39)) * 20
+y = np.random.random((60, 39)) * 1e7
 B_r = np.zeros((60, 39))
-B_theta = np.zeros((60,39))
+B_theta = np.zeros((60, 39))
 # here should be range(0,60)
 for j in range(0, 60):
     print("j is ", j)
@@ -102,15 +100,15 @@ for j in range(0, 60):
         tmp = y_n(x[j][k], r[0][k], n, y[j][k], k)
         print("y is ", y[j][k])
         print("y_ is ", tmp)
-        while abs(y[j][k] - tmp) > 1e-5:
+        while abs(y[j][k] - tmp) > 1e-3:
             print("n is ", n)
-            if tmp < 0:
-                tmp = -tmp
+            # if tmp < 0:
+            #     tmp = -tmp
             y[j][k] = tmp
             n = n + 1
             tmp = y_n(x[j][k], r[0][k], n, tmp, k)
             print("error is ", abs(y[j][k] - tmp))
-            if(n > 3):
+            if(n > 2):
                 break
         y[j][k] = tmp
 
@@ -118,7 +116,7 @@ for j in range(0, 60):
 for i in range(0, 59):
     for j in range(0, 39):
         B_r[i][j] = - (y[(i+1) % 60][j] - y[i][j]) / np.pi * 6 / r[0][j]**2 / np.sin(theta)[i+1][0]
-        B_theta[i][j] = - (y[i][(j+1) % 39] - y[i][j]) / 1 / r[0][j] / np.sin(theta)[i+1][0]
+        B_theta[i][j] = - (y[i][(j+1) % 39] - y[i][j]) / 100 / r[0][j] / np.sin(theta)[i+1][0]
 
 print("B_R is \n")
 print(B_r)
