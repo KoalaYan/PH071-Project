@@ -1,2 +1,4 @@
-# Physics_Final_Project
-Only main.py is available
+# PH071-Project
+**2019 SJTU PH071 Physics course project**
+
+
